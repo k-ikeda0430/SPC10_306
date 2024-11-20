@@ -1,0 +1,71 @@
+;=====================================================================
+;   KING JIM SR3500P x64 Driver INF-File for 8/8.1/10/11
+;
+;              Copyright 2002-2022 KING JIM CO.,LTD.
+;
+;=====================================================================
+
+[Version]
+Signature   = "$Windows NT$"
+Provider    = %PROVIDER%
+ClassGUID   = {4D36E979-E325-11CE-BFC1-08002BE10318}
+Class       = Printer
+DriverVer   = 09/22/2022,5.5.0.0
+CatalogFile = TEPP35P.cat
+
+[Manufacturer]
+%PROVIDER% = TEPP3500P, NTamd64
+
+[TEPP3500P]
+%DRIVER_NAME% = TEPP35P.DLL, %HARDWARE_ID%
+
+[TEPP3500P.NTamd64]
+%DRIVER_NAME% = TEPP35P.DLL, %HARDWARE_ID%
+
+[TEPP35P.DLL]
+CopyFiles       = DRIVER_FILES, LANGMON_FILES
+DataSection     = DRIVER_DATA
+LanguageMonitor = %LANG_MON%
+
+[DRIVER_FILES]
+TEPP35P.dll
+TEPP35UI.dll
+TEPP350P.chm
+TEP35PS.exe
+TPSOUSUP.dll
+TPSOUUTL.dll
+TPSOUUTL64.dll
+
+[LANGMON_FILES]
+TEPP35LM.dll
+
+[DRIVER_DATA]
+DriverFile = TEPP35P.dll
+ConfigFile = TEPP35UI.dll
+HelpFile   = TEPP350P.chm
+
+[DestinationDirs]
+DefaultDestDir = 66000
+LANGMON_FILES  = 66002
+
+[SourceDisksNames]
+1 = %DISK_NAME%,,
+
+[SourceDisksFiles]
+TEPP35P.dll    = 1
+TEPP35UI.dll   = 1
+TEPP350P.chm   = 1
+TEP35PS.exe    = 1
+TPSOUSUP.dll   = 1
+TPSOUUTL.dll   = 1
+TPSOUUTL64.dll = 1
+TEPP35LM.dll   = 1
+
+[Strings]
+PROVIDER    = "KING JIM"
+DRIVER_NAME = "KING JIM SR3500P"
+HARDWARE_ID = "USBPRINT\KINGJIMTEPRA_PRO_SR33B94"
+LANG_MON    = "KING JIM SR3500P Language Monitor,TEPP35LM.dll"
+DISK_NAME   = "SR3500P Printer Driver Disk"
+
+
